@@ -1,68 +1,142 @@
-<!--(c) adarsh-goel-->
+<!--(c) Code-X-Mania-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta property="og:image" content="https://i.ibb.co/M8S0Zzj/live-streaming.png" itemprop="thumbnailUrl">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>%s</title>
-    <link rel="stylesheet" type='text/css' href="https://adarsh-goel.github.io/resources/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+ 
+ <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+<!-- video player -->
 
+        <link rel="stylesheet" href="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.css" type="text/css">
+        <script src="https://cdn.fluidplayer.com/v2/current/fluidplayer.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+
+        <!-- video player ends-->
 </head>
+
+<style>
+
+h2{font-family: 'Nunito', sans-serif;
+font-size:18px;}
+
+.btn {
+  background: #33f3bc;
+  background-image: -webkit-linear-gradient(top, #33f3bc, #058aa5);
+  background-image: -moz-linear-gradient(top, #33f3bc, #058aa5);
+  background-image: -ms-linear-gradient(top, #33f3bc, #058aa5);
+  background-image: -o-linear-gradient(top, #33f3bc, #058aa5);
+  background-image: linear-gradient(to bottom, #33f3bc, #058aa5);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 200px;
+  
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+a {text-decoration: none; background-color: none; }
+</style>
 
 <body>
     <header>
-        <div class="toogle"></div>
-        <div id="file-name">
-           <marquee direction = "left"> %s</marquee>
-        </div>
-    </header>
-
-    <div class="container">
-        <tag src="%s" class="player"></tag>
-    </div>
-    
-    <footer>
-	<div class="btn btn-hover"><a href="%s">Download Now</a></div><br />
-
+        
 	    
-    </footer>
-    
-    
-    <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
-	<script>
-        const controls = [
-              'play-large',
-              'rewind',
-              'play', 
-              'fast-forward', 
-              'progress', 
-              
-              'duration',
-              
-              
-              
-              
-              'pip',
-              'airplay',
-              'download',
-              'fullscreen'
-            ];
-        document.addEventListener('DOMContentLoaded', () => {
-            const player = Plyr.setup('.player', { controls });
-        });
 
-        const body = document.querySelector('body');
-        const footer = document.querySelector('footer');
-        const toogle = document.querySelector('.toogle');
-        toogle.onclick = () => {
-            body.classList.toggle('dark')
-            footer.classList.toggle('dark')
+<h2><strong> %s </strong></h2>
+<iframe data-aa='2141806' src='//ad.a-ads.com/2141806?size=300x250' style='width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+
+    </header>
+<br />
+
+
+
+	<br /> <br />
+	
+    <div class="container">
+                <!-- video -->
+
+        <video id="video-fully-responsive" controls >
+            <source src=%s type="video/mp4">
+        </video>
+
+        <!-- video end -->
+
+
+        <!-- video player settings -->
+        <script>
+        fluidPlayer(
+            'video-fully-responsive',
+            {
+                layoutControls: {
+                    fillToContainer: true,
+                    allowDownload: true
+                }
+            },
+
+            {
+        vastOptions: {
+            adList:                     {
+
+            roll: 'preRoll',
+            vastTag: '',
+            adText: 'Advertising supports us directly'
+
+            },
+            skipButtonCaption:          'Skip ad in 5 seconds',
+            skipButtonClickCaption:     'Skip ad <span class="skip_button_icon"></span>',
+            adText:                     hai friends ,
+            adTextPosition:             'top left',
+            adCTAText:                  'Visit now!',
+            adCTATextPosition:          'bottom right',
+            vastTimeout:                5000,
+            showPlayButton:             false,
+            maxAllowedVastTagRedirects: 5,
+
+            vastAdvanced: {
+                vastLoadedCallback:       (function() { console.log("Loaded") }),
+                noVastVideoCallback:      (function() { console.log("No bro") }),
+                vastVideoSkippedCallback: (function() { console.log("skippy") }),
+                vastVideoEndedCallback:   (function() { console.log("ended") })
+            }
+
         }
-    </script>
+    }
+
+        );
+
+        
+        </script>
+
+        <!-- video player settings end -->
+    </div>
+<br /> <br />
+<iframe data-aa='2141806' src='//ad.a-ads.com/2141806?size=300x250' style='width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+<div class="btn btn-hover"><a href="%s">Download Now</a></div><br />
+
+
+
+
+	<br /> <br />
+
 </body>
 </html>
